@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='osx' display-mode='raw'>
+    <pages>
+        <page name='firstmeet'/>
+        <page name='string'/>
+        <page name='arrar'/>
+        <page name='set无序集合'/>
+        <page name='dictionary'/>
+        <page name='枚举和结构体'/>
+        <page name='类型基础知识补充'/>
+        <page name='可选类型'/>
+        <page name='基础知识注意知识点'/>
+    </pages>
+</playground>
