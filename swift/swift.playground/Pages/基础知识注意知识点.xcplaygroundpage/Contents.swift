@@ -156,8 +156,20 @@ var dic3 = [1: "one"]
 
 var dic4  = [Int: String]()
 
+dic4[0] = "zero"
+dic4[1] = "one"
+dic4[2] = "two"
+dic4[3] = "three"
+dic4[4] = "four"
+dic4[5] = "five"
+dic4[6] = "six"
+dic4[7] = "seven"
+dic4[8] = "eight"
+dic4[9] = "nine"
 
-
+for (key, value) in dic4 {
+    print("the \(key) match to \(value)", terminator: "\n")
+}
 
 
 

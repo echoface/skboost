@@ -10,5 +10,7 @@
         <page name='类型基础知识补充'/>
         <page name='可选类型'/>
         <page name='基础知识注意知识点'/>
+        <page name='functions'/>
+        <page name='closures的用法'/>
     </pages>
 </playground>
