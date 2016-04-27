@@ -1,0 +1,16 @@
+{
+  "name": "hellowort",
+  "version": "1.0.0",
+  "description": "a hello world http server",
+  "main": "hello_world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hello",
+    "world",
+    "http"
+  ],
+  "author": "HuanGong",
+  "license": "MIT"
+}
