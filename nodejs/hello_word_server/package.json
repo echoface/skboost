@@ -4,6 +4,7 @@
   "description": "a hello world http server",
   "main": "hello_world.js",
   "scripts": {
+    "start": "node hello_world.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
