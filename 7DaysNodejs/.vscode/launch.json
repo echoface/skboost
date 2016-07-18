@@ -5,10 +5,14 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
-            //"program": "${workspaceRoot}/file_copy/version1.js",
-            "program": "${workspaceRoot}/day001.js",
+            //"program": "${workspaceRoot}/day001.js",
+            //"program": "${workspaceRoot}/Path/path.js",
+            //"program": "${workspaceRoot}/Path/listdir.js",
+            //"program": "${workspaceRoot}/http/first_server.js",
+            //"program": "${workspaceRoot}/http/server_with_zlib.js",
+            "program": "${workspaceRoot}/net/socket_server.js",
             "stopOnEntry": false,
-            "args": ["${workspaceRoot}/day001.js", "${workspaceRoot}/day002.js"],
+            "args": ["${workspaceRoot}"],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": null,
             "runtimeExecutable": null,
@@ -18,7 +22,7 @@
             "env": {
                 "NODE_ENV": "development"
             },
-            "externalConsole": true,
+            "externalConsole": false,
             "sourceMaps": false,
             "outDir": null
         },
