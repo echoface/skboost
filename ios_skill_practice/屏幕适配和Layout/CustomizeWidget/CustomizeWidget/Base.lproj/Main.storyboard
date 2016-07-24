@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomizeWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="修改属性来定制控件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-HR-DmY">
+                                <rect key="frame" x="20" y="20" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLd-Ib-i6U">
+                                <rect key="frame" x="43" y="100" width="58" height="30"/>
+                                <color key="backgroundColor" red="0.19928014374755873" green="0.75359947643979064" blue="0.64755186068940229" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="increase"/>
+                                <connections>
+                                    <action selector="increaseValue" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqn-Q2-8h7"/>
+                                    <action selector="modifyProgress" destination="BYZ-38-t0r" eventType="touchUpInside" id="f4e-wZ-32T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgD-45-65W">
+                                <rect key="frame" x="140" y="100" width="64" height="30"/>
+                                <color key="backgroundColor" red="0.26162461363985468" green="0.68617064790575921" blue="0.058287148079377189" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="decrease"/>
+                                <connections>
+                                    <action selector="decreaseValue" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMc-4t-G7O"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35I-WV-NIW" customClass="ProgressContolView" customModule="CustomizeWidget" customModuleProvider="target">
+                                <rect key="frame" x="20" y="324" width="128" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Aa-C3-r6e">
+                                <rect key="frame" x="181" y="9" width="74" height="45"/>
+                                <state key="normal" title="Ok" image="four_meitu_2" backgroundImage="four_meitu_1"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uua-HR-DmY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="2cs-8a-KFd"/>
+                            <constraint firstItem="mLd-Ib-i6U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5Kq-6H-p73"/>
+                            <constraint firstItem="Uua-HR-DmY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="gNe-XP-GMV"/>
+                            <constraint firstItem="mLd-Ib-i6U" firstAttribute="top" secondItem="Uua-HR-DmY" secondAttribute="bottom" constant="40" id="hnT-uQ-h2O"/>
+                            <constraint firstItem="7Aa-C3-r6e" firstAttribute="leading" secondItem="Uua-HR-DmY" secondAttribute="trailing" constant="2" id="q1I-A1-M8h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bt" destination="7Aa-C3-r6e" id="HLo-Sv-03s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="6sG-KC-Kkg" customClass="ProgressContolView" customModule="CustomizeWidget" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="763" y="632"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="four_meitu_1" width="128" height="32"/>
+        <image name="four_meitu_2" width="32" height="32"/>
+    </resources>
+</document>

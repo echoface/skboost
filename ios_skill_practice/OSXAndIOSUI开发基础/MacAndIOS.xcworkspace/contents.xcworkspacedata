@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:L09UIpageSwitch/L09UIpageSwitch.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:L08TabViewWidget/L08TabViewWidget.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:L07TabListView/L07TabListView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:L06MiniBrowser/L06MiniBrowser.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:L05StoryboardItemBindingToSwiftClass/L05StoryboardItemBindingToSwiftClass.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:L04EventBinding/L04EventBinding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIBinding2Code/UIBinding2Code.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ImageShow/ImageShow.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UIWebView/UIWebView.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OsxUIApp/OsxUIApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:terminalApp/terminalApp.xcodeproj">
+   </FileRef>
+</Workspace>
