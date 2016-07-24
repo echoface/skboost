@@ -58,7 +58,8 @@ class ViewController: UIViewController,
         
         audioplayer = AVPlayer();
         audioplayer.volume = 0.1;
-        
+        progressview.setProgress(0.0, animated: false)
+        playtime.text = "00:00"
         http.delegate = self
         http.onSearch("http://www.douban.com/j/app/radio/channels")
         http.onSearch("http://douban.fm/j/mine/playlist?channel=0")
@@ -131,6 +132,9 @@ class ViewController: UIViewController,
         
         if ((results["song"]) != nil) {
             self.musiclist = results["song"] as! NSArray
+            if (self.musiclist.count < 1) {
+                return;
+            }
             self.tv.reloadData()
             //play the music
             let songInfo:NSDictionary = self.musiclist[0] as! NSDictionary
@@ -169,7 +173,9 @@ class ViewController: UIViewController,
     func onPlayNewItem(url:String) -> Void {
         print(url)
         timer?.invalidate();
-        playtime.text = "00:00"
+        playtime.text = "00:00";
+        progressview.progress = 0.0;
+        //progressview.setProgress(0.0, animated: false)
         
         print("start play the music")
         if (audioplayer == nil || url.isEmpty) {
@@ -178,24 +184,30 @@ class ViewController: UIViewController,
         audioplayer.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: NSURL(string: url)!))
         audioplayer.play();
         
-        //CMTime playDuration = audioplayer.currentItem?.duration;
-        //if (CMTIME_IS_INVALID(playerDuration))
         audioplayer.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(1.0, 60),
-                                                       queue: nil, usingBlock: {
-                                                       (t:CMTime)->Void in
-            
+                                                       queue: nil,
+                                                       usingBlock: {
+            (t:CMTime)->Void in
+                                                        var time:String = "";
+                                                        let current_sec = CMTimeGetSeconds(t)
+                                                        let curTimeInt:Int = Int(current_sec)
+                                                        let sec:Int = curTimeInt % 60;
+                                                        let minute:Int = Int(curTimeInt/60)
+                                                        time = minute < 10 ? "0\(minute):" : "\(minute):";
+                                                        time += sec < 10 ? "0\(sec)" : "\(sec)";
+                                                        self.playtime.text = time;
+            // update the progress view
                                                         if let item = (self.audioplayer.currentItem) {
-                                                            CMTimeGetSeconds(item.duration)
+                                                            let duaration_sec = CMTimeGetSeconds(item.duration);
+                                                            if (duaration_sec.isNaN) {
+                                                                return
+                                                            }
+                                                            print(duaration_sec); print(current_sec);
+                                                            self.progressview.setProgress(Float(current_sec/duaration_sec), animated: true)
+                                                            print("update progress to \(self.progressview.progress)")
                                                         }
                                                         
         })
-    }
-    
-    func onUpdatePlayProgress() {
-        //let t = audioplayer.currentTime();
-        //f (c > 0.0) {
-            //let t = audioplayer.
-        //}
     }
     
     func onChannelSelected(channel_id: String) {
