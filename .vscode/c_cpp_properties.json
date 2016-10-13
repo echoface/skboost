@@ -13,7 +13,8 @@
         },
         {
             "name": "Linux",
-            "includePath": ["/usr/include"
+            "includePath": [
+                "/usr/include"
             ],
             "browse" : {
                 "limitSymbolsToIncludedHeaders" : true,
