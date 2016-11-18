@@ -2,6 +2,7 @@
 * Base
 */
 public class Base {
+    //overload constructor 
         public Base (int x, int y, int z) {
             this.x = x;
             this.y = y;
@@ -11,6 +12,12 @@ public class Base {
             this.x = 0;
             this.y = 0;
             this.z = 0;
+        }
+        public void say() {
+            System.out.println("hello");
+        }
+        public void say(String str) {//overload with one param
+            System.out.println(str);
         }
 
         public int getx() {
