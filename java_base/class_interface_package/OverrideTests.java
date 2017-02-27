@@ -14,7 +14,11 @@ public class OverrideTests {
     public static void main(String[] args) {
        System.out.println("main hello");
        Base base = new Override();
+       //runtime bindings, like vtable in c++
        base.set_color(0xffffffff);
+       // Override function call
        System.out.println(base.GetName());
+
+       Thread t = Thread.currentThread();
     }
 }

@@ -1,5 +1,4 @@
 package ClassAndInterface;
-
 /**
  * Base
     任何含有一个 或者 多个 bstract方法的基类都必须申明为抽象类
