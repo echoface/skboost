@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#b01").click(function(){
+	  htmlobj=$.ajax({url:"/api/weatherinfo/shanghai",async:false});
+	  $("#myDiv").html(htmlobj.responseText);
+	  var jsobj = $.parseJSON(htmlobj.responseText);
+	  var img = document.getElementById("image");
+	  img.src = jsobj.image;
+  });
+  $.post(xxxxxxxxxx)
+});
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>通过 AJAX 改变文本</h2></div>
+<button id="b01" type="button">改变内容</button>
+
+<img id="image" src="" alt="">
+
+</body>
+</html>
