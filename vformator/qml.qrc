@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>image/image.jpg</file>
+        <file>image/save.jpeg</file>
+    </qresource>
+</RCC>
