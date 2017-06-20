@@ -6,6 +6,7 @@
 #include <queue>
 #include <iostream>
 #include <unistd.h>
+#include "ts_queue.h"
 
 class RunLoop {
 public:
@@ -29,28 +30,28 @@ public:
         thread_ = new std::thread(t);
 
         quit_ = std::bind([&]() {
-                    if (running_)
-                        running_ = false;
-                    std::unique_lock<std::mutex> lck(mutex_);
-                    con_.notify_all();
-                });
+          std::unique_lock<std::mutex> lck(mutex_);
+          if (running_)
+            running_ = false;
+          con_.notify_all();
+        });
         return quit_;
     }
 
     void Wait() {
-        if (thread_ && thread_->joinable())
-            thread_->join();
+      if (thread_ && thread_->joinable())
+        thread_->join();
     }
 
     void Put(int x) {
-        std::unique_lock<std::mutex> lck(mutex_);
-        queue_.push(x);
-        con_.notify_one();
+      std::unique_lock<std::mutex> lck(mutex_);
+      queue_.push(x);
+      con_.notify_one();
     }
 private:
     void Run() {
         running_ = true;
-        std::cout << "runloop start";
+        std::cout << "runloop start" << std::endl;
         while(running_) {
             std::unique_lock<std::mutex> lck(mutex_);
             while(queue_.empty() && running_) {
@@ -58,8 +59,9 @@ private:
             }
 
             while (!queue_.empty()) {
-                handle(queue_.back());
-                queue_.pop();
+                int v;
+                if (queue_.try_pop(v))
+                    handle(v);
             }
         }
         std::cout << "runloop end";
@@ -75,7 +77,7 @@ private:
 
     std::mutex mutex_;
     std::thread* thread_;
-    std::queue<int> queue_;
+    SafeQueue<int> queue_;
     std::condition_variable con_;
 
     std::function<void() > quit_;
