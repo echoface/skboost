@@ -40,6 +40,7 @@ int main(int argc, char **argv) {
 	my_addr.sin_family = PF_INET;
     printf("\n\x1b[31m==%s %s <<%s>> [%d]====\x1b[0m", __FILE__, __FUNCTION__, "", myport);
 	my_addr.sin_port = htons(myport);
+
 	if (argv[3])
         my_addr.sin_addr.s_addr = inet_addr(argv[3]);
 	else
@@ -75,5 +76,6 @@ int main(int argc, char **argv) {
 		/* 处理每个新连接上的数据收发结束 */
 	}
 	close(sockfd);
+
 	return 0;
 }

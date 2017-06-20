@@ -77,3 +77,6 @@ for v in d.values():
 
 for k, v in d.items():
     print(k, v) ##a 1
+
+l = [1, 2, 3, 4]
+enumerate(l)
