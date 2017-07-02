@@ -7,3 +7,5 @@ def t_sum(*arg):
 if __name__ == '__main__':
     t_sum(1,2,3,4)
     t_sum(*[1,2,3,4])
+
+
