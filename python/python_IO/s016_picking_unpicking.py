@@ -59,3 +59,10 @@ def Animal2Dict(anm):
     }
 
 json.dumps(a, default=Animal2Dict)
+
+print(json.dumps(s, default=lambda obj: obj.__dict__))
+
+def dict2animal(d):
+    return Animal(d["name"], d["sex"], d["type"])
+
+#json.loads(d, defalt=dict2animal)
