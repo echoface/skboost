@@ -31,8 +31,9 @@ public:
 
         quit_ = std::bind([&]() {
           std::unique_lock<std::mutex> lck(mutex_);
-          if (running_)
+          if (running_) {
             running_ = false;
+          }
           con_.notify_all();
         });
         return quit_;
@@ -44,9 +45,11 @@ public:
     }
 
     void Put(int x) {
-      std::unique_lock<std::mutex> lck(mutex_);
       queue_.push(x);
-      con_.notify_one();
+      {
+        std::unique_lock<std::mutex> lck(mutex_);
+        con_.notify_one();
+      }
     }
 private:
     void Run() {
