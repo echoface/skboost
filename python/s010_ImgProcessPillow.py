@@ -20,17 +20,3 @@ print(sys.path)
 
 # add a path to system path, it can make your moudle find by "import"
 sys.path.append("./YourModulePath")
-
-class Student:
-    
-    def __init__(self, name, age, id):
-        self.name_ = name
-        self.age_  = age
-        self.id_  = id
-        self.__private_data = {}
-
-
-
-std = Student("Huan.Gong", age = 25, id = "000001")
-print(std.name_, std.age_, std.id_)
-print(std.__private_data)

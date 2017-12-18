@@ -62,3 +62,5 @@ class Inherit(Base):
 
 base = Inherit("gonghuan")
 print(base.update_data1("huan"))
+
+
