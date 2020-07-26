@@ -1,4 +1,4 @@
-# ProgramSkillLearn
+# skill boost
 
 currently, i will focus on ios app developing based on swift, and nodejs + frontend learning
   1. swift :  reading the official swift programing language pdf
