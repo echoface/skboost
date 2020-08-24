@@ -62,7 +62,7 @@ int MaxSequenceSum_recursion(int Array[], int start, int end) {
     if (midsum > lefMaxSum && midsum > rightMaxSum)
         return midsum;
     else if (lefMaxSum > midsum && leftMaxSum > rightMaxSum)
-        reutn leftMaxSum;
+        return leftMaxSum;
     else
         return rightMaxSum;
 }
