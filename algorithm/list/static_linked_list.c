@@ -1,5 +1,10 @@
 #include "stdio.h"
 
+/**
+ * 静态链表, 就是数组的形式表示链表. 之后通过链表节点中记录下一个节点
+ * 的索引id来进行访问;
+ */
+
 typedef struct Node {
     int data;   //indicator node data
     int next; //indicator next postion
